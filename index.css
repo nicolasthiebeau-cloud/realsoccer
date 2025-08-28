@@ -1,0 +1,183 @@
+* html img,
+* html .png {
+	behavior: expression(
+			(this.runtimeStyle.behavior="none") && (this.pngSet ? this.pngSet = true : (
+				this.nodeName == "IMG" ? (
+					this.src.toLowerCase().indexOf('.png') > -1 ? (
+						this.runtimeStyle.backgroundImage = "none",
+						this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')",
+						this.src = "images/transp.gif"
+					) : 0
+				) : (
+					this.origBg = this.origBg? this.origBg :this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''),
+					this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "', sizingMethod='crop')",
+					(this.currentStyle.backgroundRepeat != 'no-repeat') ? (
+						this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "', sizingMethod='scale')"
+					) : 0,
+					this.runtimeStyle.backgroundImage = "none"
+				),this.pngSet=true
+			)
+		)
+	);
+}
+
+body {
+	background-image: url(images/bgd.gif);
+	background-repeat: repeat;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-size-adjust:none;
+	border-collapse:collapse;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+/* Lien */
+
+a:link, a:visited {
+	text-decoration:none;
+	color:#000000;
+}
+
+a:hover {
+	text-decoration:underline;
+	color:#0000FF;
+}
+
+/* Style texte */
+
+.Style2 {
+	font-size: 16px;
+	font-weight: bold;
+}
+.Style3 {
+	color: #FF0000;
+	font-weight: bold;
+	font-size: medium;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.Style3 a:link, .Style3 a:visited, .Style3 a:hover {
+	color:#FF0000;
+	font-weight: bold;
+	text-decoration:none;
+}
+
+.Style4 {
+	font-size: 11px;
+	font-weight: bold;
+	color: #CCCCCC;
+}
+.Style5 {
+	font-size: 12px;
+	color: #00CC33;
+	font-weight: bold;
+}
+
+/* INDEX */
+
+.index {
+	background-image: url(images/table.gif);
+	margin:auto;
+	height: 600px;
+	width: 980px;
+	border:double #000000 5px;
+}
+
+.index_title {
+	background-image:url(images/fondlog.png);
+	background-repeat:repeat;
+	font-size: large;
+	font-weight: normal;
+	color: #FFFFFF;
+	height: 20px;
+	width: 450px;
+	border: 1px outset #CCCCCC;
+	position: relative;
+	padding: 3px;
+	left: 100px;
+	top: -6px;
+}
+.index_login {
+	background-image:url(images/fondlog.png);
+	background-repeat:repeat;
+	height: 225px;
+	width: 450px;
+	border: 1px outset #CCCCCC;
+	position: relative;
+	color: #FFFFFF;
+	padding: 3px;
+	left: 100px;
+	top: 0px;
+}
+
+.log_button
+{
+	border:1px solid #999;
+	background-image:url(images/fondlog.png);
+	background-repeat:repeat;
+	font-family:Verdana, Arial;
+	font-size:10px;
+	font-weight:bold;
+	margin:1px;
+	color:#FFFFFF;
+	padding:2px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.log_champ
+{
+	border:1px solid #999;
+	background-image:url(images/fondlog.png);
+	background-repeat:repeat;
+	font-family:Verdana, Arial;
+	font-size:10px;
+	font-weight:bold;
+	margin:1px;
+	color:#FFFFFF;
+	padding:2px;
+	cursor: text;
+}
+
+.index_logo {
+	background-image: url(images/logo.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 157px;
+	width: 230px;
+	position: relative;
+	left: 740px;
+}
+
+
+/* registration */
+
+.reg_title {
+	background-image:url(images/fondlog.png);
+	background-repeat:repeat;
+	font-size: large;
+	font-weight: normal;
+	color: #FFFFFF;
+	height: 20px;
+	width: 600px;
+	border: thin dotted #CCCCCC;
+	position: relative;
+	padding: 3px;
+	left: 100px;
+	top: -10px;
+}
+.reg_form {
+	background-image:url(images/fondlog.png);
+	background-repeat:repeat;
+	height: 370px;
+	width: 600px;
+	border: thin dotted #CCCCCC;
+	position: relative;
+	color: #FFFFFF;
+	padding: 3px;
+	left: 100px;
+	top: 0px;
+}
